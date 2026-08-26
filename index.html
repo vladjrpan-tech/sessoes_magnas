@@ -458,9 +458,7 @@ function sessionInfo(sessao) {
 let agenda = {};
 
 function csvParse(text) {
-  return text.split(/
-?
-/).map(line => {
+  return text.split(/\r?\n/).map(line => {
     const row = []; let cur = ""; let inQ = false;
     for (let i = 0; i < line.length; i++) {
       const c = line[i];
