@@ -357,15 +357,15 @@ function mLodgeHTML(l) {
       <div class="m-info">
         <div class="m-name">${l.nome}</div>
         <div class="m-city">${l.cidade}</div>
-        ${l.irmao ? `<div class="m-irmao">Ir∴ <b>${l.irmao.replace(/^(ir|iir)[∴.\s]+/i,"")}</b></div>` : ""}
+        ${l.irmao ? `<div class="m-irmao"><b>${l.irmao}</b></div>` : ""}
       </div>
       <div class="m-right">
         <div class="m-hora">${l.hora}</div>
       </div>
     </div>
-    <div class="m-card-footer">
+    <div class="m-card-footer" style="flex-direction:column;align-items:flex-start;gap:3px">
       <span class="m-sessao-badge">${si.label}</span>
-      <span style="font-size:9px;color:var(--text-dim)">${l.sessao.replace(/Sess[aã]o Magna (de |do |da )?/i,"").split(" - ").slice(1).join(" · ").substring(0,40)||""}</span>
+      <span style="font-size:10px;color:var(--parchment);opacity:.85;line-height:1.3">${l.sessao}</span>
     </div>
   </div>`;
 }
@@ -379,8 +379,9 @@ function dLodgeHTML(l) {
       <div class="d-linfo">
         <div class="d-lname">${l.nome}</div>
         <div class="d-lcity">${l.cidade}</div>
-        ${l.irmao ? `<div class="d-lirmao">Ir∴ <b>${l.irmao.replace(/^(ir|iir)[∴.\s]+/i,"")}</b></div>` : ""}
+        ${l.irmao ? `<div class="d-lirmao"><b>${l.irmao}</b></div>` : ""}
         <span class="d-lbadge">${si.label}</span>
+        <div style="font-size:11px;color:var(--parchment);opacity:.8;margin-top:4px;line-height:1.4">${l.sessao}</div>
       </div>
       <div class="d-lright">
         <div class="d-lhora">${l.hora}</div>
